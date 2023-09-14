@@ -19,6 +19,3 @@ interface MovieData
   > {
   runtime: number;
 }
-interface ErrorData {
-  message: string;
-}

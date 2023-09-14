@@ -8,7 +8,8 @@ import List from '../assets/List.png';
 interface MainProps {
   data: MovieData | null;
   isLoading: boolean;
-  error: ErrorData | null;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  error?: any;
 }
 
 const Main = ({ data, isLoading, error }: MainProps) => {
