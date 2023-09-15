@@ -20,7 +20,7 @@ const Aside = () => {
   return (
     <div className="border border-[rgba(102, 102, 102, 1)] rounded-r-[45px]">
       {showAnotherLogo ? (
-        <img src={tv} alt="mobile logo" />
+        <img className="my-[52px] px-5" src={tv} alt="mobile logo" />
       ) : (
         <img className="my-[52px] px-5" src={logo} alt="logo" />
       )}

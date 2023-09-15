@@ -5,7 +5,7 @@ import axios from 'axios';
 export const useFetch = (queryKey: string[], movieId?: number) => {
   const baseUrl = 'https://api.themoviedb.org/3/movie/';
   const API_KEY = import.meta.env.VITE_API_KEY;
-  const url = movieId ? `${baseUrl}${movieId}` : `${baseUrl}popular`;
+  const url = movieId ? `${baseUrl}${movieId}` : `${baseUrl}top_rated`;
   const options = {
     method: 'GET',
     url: `${url}?api_key=${API_KEY}`,

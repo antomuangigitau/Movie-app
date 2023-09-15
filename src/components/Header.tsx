@@ -6,6 +6,7 @@ import imdb from '../assets/imdb.png';
 import { Play } from '../svgFiles';
 import { useFetch } from '../hooks/useFetch';
 import { useEffect, useState, useMemo } from 'react';
+import apple from '../assets/PngItem_1381056 1.png';
 
 const Header = () => {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
@@ -78,10 +79,14 @@ const Header = () => {
           <div className="flex items-center gap-[10px] mt-4">
             <img src={imdb} alt="imdb" />
             <p>{voteAverage} / 10</p>
+            <div className="ml-9 flex items-center gap-3">
+              <img src={apple} alt="apple" />
+              <span>97%</span>
+            </div>
           </div>
           <p className="my-4">{overview}</p>
           <button
-            className="bg-[#BE123C] flex items-center px-4 py-[6px] gap-2"
+            className="bg-stars-text-color flex items-center px-4 py-[6px] gap-2 rounded-md"
             type="button"
           >
             <Play />
