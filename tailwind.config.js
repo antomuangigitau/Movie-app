@@ -2,9 +2,9 @@
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
-    screens: {
-      mini: '375px',
-    },
+    // screens: {
+    //   mini: '375px',
+    // },
     extend: {
       colors: {
         'primary-color': 'var(--primary-color)',
