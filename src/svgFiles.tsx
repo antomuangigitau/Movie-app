@@ -17,9 +17,15 @@ export const Play = () => {
   );
 };
 
-export const Heart = () => {
+interface HeartProps {
+  className: string;
+  onClick: () => void;
+}
+export const Heart = ({ className, onClick }: HeartProps) => {
   return (
     <svg
+      className={className}
+      onClick={onClick}
       width="20"
       height="20"
       viewBox="0 0 20 20"

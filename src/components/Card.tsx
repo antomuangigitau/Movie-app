@@ -4,7 +4,10 @@ import { Link } from 'react-router-dom';
 import { Heart } from '../svgFiles';
 import apple from '../assets/PngItem_1381056 1.png';
 import Loading from './Loading';
+import { useState } from 'react';
+
 const Card = () => {
+  const [activeIndexes, setActiveIndexes] = useState<number[]>([]);
   const queryKey = ['customGetData'];
   const { data, isLoading, error } = useFetch(queryKey);
   const getRandomInt = (min: number, max: number) => {
@@ -13,6 +16,13 @@ const Card = () => {
     return Math.floor(Math.random() * (max - min) + min);
   };
   const randomNumber = getRandomInt(50, 100);
+  const handleClick = (index: number) => {
+    if (activeIndexes.includes(index)) {
+      setActiveIndexes(activeIndexes.filter((item) => item !== index));
+    } else {
+      setActiveIndexes([...activeIndexes, index]);
+    }
+  };
   if (isLoading) {
     return <Loading />;
   }
@@ -38,7 +48,10 @@ const Card = () => {
         return (
           <div className="relative w-full lg:w-[250px]" key={id}>
             <div className="w-[30px] h-[30px] flex items-center justify-center bg-fill-color absolute top-3 right-3 rounded-full">
-              <Heart />
+              <Heart
+                className={activeIndexes.includes(id) ? 'activebtn' : ''}
+                onClick={() => handleClick(id)}
+              />
             </div>
             <Link to={`movies/${id}`}>
               <img
